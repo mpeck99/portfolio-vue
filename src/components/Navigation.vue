@@ -5,10 +5,10 @@
     <span></span>
   </button>
   <nav class="main-nav" aria-label="Navigation">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
-    <router-link to="/about">Portfolio</router-link>
-    <router-link to="/about">Movies</router-link>
+    <router-link to="/portfolio">Portfolio</router-link>
+    <router-link to="/movies">Movies</router-link>
   </nav>
 </template>
 
@@ -96,6 +96,162 @@ export default {};
 
   @include tablet {
     display: block;
+
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    justify-self: flex-end;
+  }
+}
+
+.hamburger-menu {
+  display: block;
+
+  margin-right: 1rem;
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+
+  span {
+    height: 0.25rem;
+    width: 2.5rem;
+
+    margin-bottom: 0.5rem;
+
+    display: block;
+    position: relative;
+
+    background-color: $turquoise;
+
+    &:after {
+      content: '';
+
+      width: 0;
+      height: inherit;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      background-color: $coral;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &.js-open {
+      span {
+        &:after {
+          width: 100%;
+          transition: 0.2s;
+        }
+        &:nth-of-type(2) {
+          &:after {
+            transition-delay: 0.1s;
+          }
+        }
+
+        &:nth-of-type(3) {
+          &:after {
+            transition-delay: 0.2s;
+          }
+        }
+      }
+    }
+
+    &.js-close {
+      span {
+        &:after {
+          width: 0;
+
+          background-color: $navy;
+        }
+      }
+    }
+    span {
+      &:after {
+        width: 100%;
+        transition: 0.2s;
+      }
+      &:nth-of-type(2) {
+        &:after {
+          transition-delay: 0.1s;
+        }
+      }
+
+      &:nth-of-type(3) {
+        &:after {
+          transition-delay: 0.2s;
+        }
+      }
+    }
+  }
+
+  &.js-open {
+    z-index: 2;
+
+    span {
+      background-color: $navy;
+
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(2) {
+        display: none;
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(9px, -9px);
+        transition: ease-in 0.2s;
+      }
+    }
+  }
+
+  &.js-close {
+    span {
+      background-color: $navy;
+
+      &:nth-child(1) {
+        transform: rotate(0deg);
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(2) {
+        display: block;
+        transition: ease-in 0.2s;
+      }
+      &:nth-child(3) {
+        transform: rotate(0deg);
+        transition: ease-in 0.2s;
+      }
+
+      &:after {
+        width: 0;
+      }
+    }
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0%;
   }
 }
 </style>
