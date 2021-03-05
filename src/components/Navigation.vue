@@ -5,10 +5,20 @@
     <span></span>
   </button>
   <nav class="main-nav" aria-label="Navigation">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/portfolio">Portfolio</router-link>
-    <router-link to="/movies">Movies</router-link>
+    <ul>
+      <li>
+        <router-link to="/">Home</router-link>
+      </li>
+      <li>
+        <router-link to="/about">About</router-link>
+      </li>
+      <li>
+        <router-link to="/portfolio">Portfolio</router-link>
+      </li>
+      <li>
+        <router-link to="/movies">Movies</router-link>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -51,8 +61,13 @@ export default {};
 
       &:hover,
       &:focus {
-        transform: translateY(0.5rem);
+        transform: translateY(-0.5rem);
         transition: 0.5s ease;
+        opacity: 0.8;
+
+        a {
+          color: darken($teal, 2%);
+        }
       }
     }
   }
