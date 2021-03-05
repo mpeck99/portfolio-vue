@@ -1,5 +1,11 @@
 <template>
-  <navigation />
+  <header class="header">
+    <a href="/">
+      <img src="./assets/images/logo-mp.png" alt="MP Logo" class="logo" />
+    </a>
+    <navigation />
+  </header>
+
   <router-view />
 </template>
 
@@ -15,4 +21,44 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.header {
+  min-height: 6rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 100%;
+
+  align-items: center;
+
+  margin: 0;
+  padding: 1rem;
+
+  button {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    justify-self: flex-end;
+
+    background: none;
+    border: 0;
+
+    &:hover,
+    &:focus {
+      color: $coral;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.logo {
+  width: 5rem;
+  height: auto;
+
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+
+  margin-top: 0.5rem;
+}
+</style>
