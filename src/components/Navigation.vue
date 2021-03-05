@@ -1,5 +1,5 @@
 <template>
-  <button class="hamburger-menu">
+  <button class="hamburger-menu" @click="menuOpenClose">
     <span></span>
     <span></span>
     <span></span>
@@ -7,23 +7,60 @@
   <nav class="main-nav" aria-label="Navigation">
     <ul>
       <li>
-        <router-link to="/">Home</router-link>
+        <router-link to="/" @mouseover="checkForActive">Home</router-link>
       </li>
       <li>
-        <router-link to="/about">About</router-link>
+        <router-link to="/about" @mouseover="checkForActive">About</router-link>
       </li>
       <li>
-        <router-link to="/portfolio">Portfolio</router-link>
+        <router-link to="/portfolio" @mouseover="checkForActive"
+          >Portfolio</router-link
+        >
       </li>
       <li>
-        <router-link to="/movies">Movies</router-link>
+        <router-link to="/movies" @mouseover="checkForActive"
+          >Movies</router-link
+        >
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    menuOpenClose: function() {
+      const nav = document.querySelector('.main-nav'),
+        body = document.querySelector('body'),
+        menu = document.querySelector('.hamburger-menu');
+
+      if (nav.classList.contains('js-open')) {
+        menu.classList.add('js-close');
+        nav.classList.add('js-close');
+        setTimeout(() => {
+          nav.classList.remove('js-open');
+          menu.classList.remove('js-open');
+          menu.classList.remove('js-close');
+          nav.classList.remove('js-close');
+          body.classList.remove('js-open');
+        }, 450);
+      } else {
+        nav.classList.add('js-open');
+        body.classList.add('js-open');
+        menu.classList.add('js-open');
+      }
+    },
+
+    checkForActive: function() {
+      const activeItem = document.querySelector('.active');
+
+      activeItem.parentNode.classList.add('active');
+      setTimeout(() => {
+        activeItem.parentNode.classList.remove('active');
+      }, 500);
+    }
+  }
+};
 </script>
 
 <style lang="scss">
@@ -40,11 +77,6 @@ export default {};
 
     color: $turquoise;
     text-decoration: none;
-
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
 
     &.active {
       border-bottom: 0.25rem solid $coral;
@@ -63,10 +95,9 @@ export default {};
       &:focus {
         transform: translateY(-0.5rem);
         transition: 0.5s ease;
-        opacity: 0.8;
 
         a {
-          color: darken($teal, 2%);
+          color: $navy;
         }
       }
     }
@@ -148,12 +179,32 @@ export default {};
       bottom: 0;
       left: 0;
 
-      background-color: $coral;
+      background-color: $turquoise;
     }
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
+    span {
+      &:after {
+        width: 100%;
+
+        background-color: $coral;
+
+        transition: 0.2s;
+      }
+      &:nth-of-type(2) {
+        &:after {
+          transition-delay: 0.1s;
+        }
+      }
+
+      &:nth-of-type(3) {
+        &:after {
+          transition-delay: 0.2s;
+        }
+      }
+    }
+
     &.js-open {
       span {
         &:after {
@@ -179,24 +230,7 @@ export default {};
         &:after {
           width: 0;
 
-          background-color: $navy;
-        }
-      }
-    }
-    span {
-      &:after {
-        width: 100%;
-        transition: 0.2s;
-      }
-      &:nth-of-type(2) {
-        &:after {
-          transition-delay: 0.1s;
-        }
-      }
-
-      &:nth-of-type(3) {
-        &:after {
-          transition-delay: 0.2s;
+          background-color: $turquoise;
         }
       }
     }
