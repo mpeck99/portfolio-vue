@@ -17,17 +17,22 @@ export default {
   name: 'Home',
   components: {
     Navigation
-  }
+  },
+
 };
 </script>
 
 <style lang="scss">
 .header {
   min-height: 6rem;
+  width: 100%;
 
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 100%;
+
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
 
   align-items: center;
 

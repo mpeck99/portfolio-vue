@@ -13,22 +13,29 @@ body {
   font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.25rem;
+}
+
 body {
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 6rem 1fr auto;
+  grid-template-columns: 100%;
+  align-content: center;
+  justify-items: center;
 
   &.js-open {
     overflow: hidden;
   }
 }
-* {
-  box-sizing: border-box;
-}
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-p {
-  line-height: 1.25rem;
+.content {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
 }
