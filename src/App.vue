@@ -5,20 +5,21 @@
     </a>
     <navigation />
   </header>
-
   <router-view />
+  <foot />
 </template>
 
 <script>
 // @ is an alias to /src
 import Navigation from '@/components/Navigation';
+import Foot from '@/components/Footer';
 
 export default {
   name: 'Home',
   components: {
-    Navigation
-  },
-
+    Navigation,
+    Foot
+  }
 };
 </script>
 
