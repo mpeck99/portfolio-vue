@@ -3,7 +3,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  beforeCreate: function() {
+    document.body.className = '';
+  }
+};
 </script>
 
 <style></style>
