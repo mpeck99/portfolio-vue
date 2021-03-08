@@ -1,5 +1,8 @@
 <template>
-  <div class="home"></div>
+  <div class="content content-home">
+    <h1>Morgan Peck</h1>
+    <p>Front-End Developer</p>
+  </div>
 </template>
 
 <script>
