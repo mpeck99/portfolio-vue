@@ -97,7 +97,7 @@ export default {
         transition: 0.5s ease;
 
         a {
-          color: $navy;
+          color: $teal;
         }
       }
     }
