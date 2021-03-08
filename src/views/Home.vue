@@ -9,6 +9,9 @@
 // @ is an alias to /src
 
 export default {
-  name: 'Home'
+  name: 'Home',
+  beforeCreate: function() {
+    document.body.className = 'layout--bg-img';
+  }
 };
 </script>
