@@ -30,12 +30,14 @@ body {
   align-content: center;
   justify-items: center;
 
+  background-color: $navy;
+
   &.js-open {
     overflow: hidden;
   }
 }
 
-.content {
+.inner {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
 }
