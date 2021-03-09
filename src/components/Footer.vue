@@ -1,6 +1,18 @@
 <template>
   <footer>
     <p>@{{ currentYear.getFullYear() }} Morgan Peck</p>
+    <ul class="social-media-list">
+      <li>
+        <a href="https://www.linkedin.com/in/morganpeck99/" target="_blank">linkedin</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/mpeck99" target="_blank">Repos</a>
+      </li>
+      <li>
+        <a href="mailto:mopeck99@gmail.com?subject=Portfolio">Contact</a>
+      </li>
+    </ul>
   </footer>
 </template>
 
