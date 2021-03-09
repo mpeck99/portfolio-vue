@@ -38,6 +38,10 @@ body {
 }
 
 .inner {
+  width: 100%;
+
   grid-row: 2 / 3;
   grid-column: 1 / 2;
+
+  padding: 1rem;
 }
