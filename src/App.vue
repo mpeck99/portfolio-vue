@@ -67,4 +67,10 @@ export default {
 
   margin-top: 0.5rem;
 }
+
+.layout--bg-img {
+  background-image: linear-gradient(rgba($navy, 1), rgba($turquoise, 0.75), rgba($navy, 1)), url('./assets/images/home-background.jpg');
+  background-size: cover;
+  background-position: center;
+}
 </style>

@@ -1,13 +1,11 @@
 <template>
-  <div class="content content-home">
+  <div class="inner">
     <h1>Morgan Peck</h1>
     <p>Front-End Developer</p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'Home',
   beforeCreate: function() {
@@ -15,13 +13,16 @@ export default {
   }
 };
 </script>
-<style lang="scss">
-.content-home {
+<style lang="scss" scoped>
+.inner {
   margin: auto 0;
+
   font-family: $main;
+  text-align: center;
 
   h1 {
     margin-bottom: 0;
+    margin-top: 0;
 
     font-size: 2rem;
     color: $navy;
@@ -37,7 +38,6 @@ export default {
   p {
     margin: 0;
 
-    text-align: center;
     font-weight: 400;
     font-size: 1.5rem;
     font-family: $secondary;
@@ -47,16 +47,5 @@ export default {
       font-size: 3rem;
     }
   }
-}
-
-.layout--bg-img {
-  background-image: linear-gradient(
-      rgba($navy, 1),
-      rgba($turquoise, 0.75),
-      rgba($navy, 1)
-    ),
-    url('../assets/images/home-background.jpg');
-  background-size: cover;
-  background-position: center;
 }
 </style>
