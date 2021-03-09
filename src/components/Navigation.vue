@@ -13,14 +13,10 @@
         <router-link to="/about" @mouseover="checkForActive">About</router-link>
       </li>
       <li>
-        <router-link to="/portfolio" @mouseover="checkForActive"
-          >Portfolio</router-link
-        >
+        <router-link to="/portfolio" @mouseover="checkForActive">Portfolio</router-link>
       </li>
       <li>
-        <router-link to="/movies" @mouseover="checkForActive"
-          >Movies</router-link
-        >
+        <router-link to="/movies" @mouseover="checkForActive">Movies</router-link>
       </li>
     </ul>
   </nav>
